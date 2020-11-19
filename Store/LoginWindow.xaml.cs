@@ -25,6 +25,7 @@ namespace Store
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
+            /*
             State.User = API.GetCustomerByName(NameField.Text.Trim());
             if (State.User != null)
             {
@@ -35,7 +36,7 @@ namespace Store
             else
             {
                 NameField.Text = "...";
-            }
+            }*/
         }
     }
 }
