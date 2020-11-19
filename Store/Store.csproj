@@ -12,9 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Assets\Login.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Assets\Lunfilms.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
