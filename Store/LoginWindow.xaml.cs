@@ -22,7 +22,10 @@ namespace Store
         {
             InitializeComponent();
         }
-
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
             /*
@@ -37,6 +40,16 @@ namespace Store
             {
                 NameField.Text = "...";
             }*/
+        }
+
+        private void Button_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Button_GotMouseCapture_1(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

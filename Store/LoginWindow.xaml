@@ -28,20 +28,14 @@
             <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" Foreground="LightSlateGray" FontSize="18"/>
             <StackPanel VerticalAlignment="Center" Margin="10,0,10,0" Height="122">
                 <Label Content="Username" FontSize="9" Margin="0,0"/>
-                <TextBox Margin="0,1"/>
+                <TextBox Name="NameField" Margin="0,1"/>
                 <Label Content="Password" FontSize="9" Margin="0,0"/>
-                <PasswordBox Margin="0,1"/>
+                <PasswordBox Name="PasswordField" Margin="0,1"/>
             </StackPanel>
             <Grid Margin="0,125,0,0" >
-                    
-                    
-                    <Button Content="Close" Width="90" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15,10"/>
-                    <Button Content="LogIn" HorizontalAlignment="Left" Width="90" VerticalAlignment="Top" Margin="15,10"/>
-                         
-                   
+                <Button Content="Close" Name="CloseButton" Width="90" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15,10" Click="CloseButton_Click"/>
+                <Button Content="LogIn" HorizontalAlignment="Left" Width="90" VerticalAlignment="Top" Margin="15,10"/>
             </Grid>
-
-            
         </Grid>
     </Grid>
 
