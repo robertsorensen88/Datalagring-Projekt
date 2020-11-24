@@ -23,11 +23,23 @@ namespace Store
         {
             InitializeComponent();
         }
-    private void ReturnButtonClick(object sender, RoutedEventArgs e)
+        private void ReturnButtonClick(object sender, RoutedEventArgs e)
         {
             var next_window = new LoginWindow();
             next_window.Show();
             this.Close();
         }
+       /* private void CreateUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (NewPasswordbox == CPasswordbox)
+            {
+                Customer.Add 
+
+                var next_window = new LoginWindow();
+                next_window.Show();
+                this.Close();
+            }
+        }*/
     }
+    
 }

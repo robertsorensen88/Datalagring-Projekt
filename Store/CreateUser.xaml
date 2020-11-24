@@ -34,15 +34,15 @@
             <TextBlock Text="Create user" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Foreground="LightSlateGray" FontSize="18"/>
             <StackPanel VerticalAlignment="Center" Margin="10,0,10,0" Height="215">
                 <Label Content="Username" FontSize="9" Margin="0,0"/>
-                <TextBox Name="NameField" Margin="0,0"/>
+                <TextBox Name="NewNameField" Margin="0,0"/>
                 <Label Content="Email" FontSize="9" Margin="0,0"/>
-                <TextBox Name="EmailField" Margin="0,0"/>
+                <TextBox Name="NewEmailField" Margin="0,0"/>
                 <Label Content="Password" FontSize="9" Margin="0,0"/>
-                <PasswordBox Name="Passwordbox" Margin="0,0"/>
+                <PasswordBox Name="NewPasswordbox" Margin="0,0"/>
                 <Label Content="Confirm Password" FontSize="9" Margin="0,0"/>
                 <PasswordBox Name="CPasswordbox" Margin="0,0"/>
             </StackPanel>
-            <Button Content="Back" Name="CloseButton" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,217,0,0" Click="ReturnButtonClick"/>
+            <Button Content="Back" Name="CloseButton" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,217,0,0"  Click="ReturnButtonClick"/>
             <Button Content="Create" HorizontalAlignment="Left" Width="90" VerticalAlignment="Top" Margin="20,217,0,0" RenderTransformOrigin="0.248,1.853"/>
 
         </Grid>
