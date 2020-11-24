@@ -11,12 +11,12 @@
 
     </Window.Resources>
     <Grid>
-        <Rectangle Height="280" VerticalAlignment="Top">
+        <Rectangle Height="450" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0 ">
-                    <GradientStop Color="#FF2281D1"/>
-                    <GradientStop Color="#FF34268A" Offset="1"/>
-                    <GradientStop Color="Navy" Offset="0.5"/>
+                    <GradientStop Color="Navy"/>
+                    <GradientStop Color="MediumPurple" Offset="1"/>
+                    <GradientStop Color="Purple" Offset="0.5"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
@@ -43,13 +43,24 @@
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter Property="Background" Value="White"/>
                                         <Setter Property="BorderBrush" Value="White"/>
+                                        <Setter Property="Foreground" Value="Red"/>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
                         </Button.Style>
                     </Button>
                     <Button Margin="40,0" Content="Forgotten your password?" HorizontalAlignment="Right"  VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="White" Foreground="Blue">
-                        
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="White"/>
+                                        <Setter Property="BorderBrush" Value="White"/>
+                                        <Setter Property="Foreground" Value="Red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
                     </Button>
                 </StackPanel>
                 <Button Content="Close" Name="CloseButton" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,43,0,0" Click="CloseButton_Click"/>
