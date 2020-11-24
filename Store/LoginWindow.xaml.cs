@@ -16,19 +16,34 @@ namespace Store
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
+    /// TODO Password and username have 2 match 2 login 
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
-        {
-            InitializeComponent();
-        }
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
+        public LoginWindow()
+        {
+            InitializeComponent();
+        }
+        
+        private void SignUp_Click(Object sender, RoutedEventArgs e)
+        {
+            var next_window = new CreateUser();
+            try
+            {
+                next_window.Show();
+                this.Close();
+            }
+            catch
+            {
+                this.Close();
+            }
+        }
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
-            /*
+            
             State.User = API.GetCustomerByName(NameField.Text.Trim());
             if (State.User != null)
             {
@@ -39,7 +54,7 @@ namespace Store
             else
             {
                 NameField.Text = "...";
-            }*/
+            }
         }
 
         private void Button_GotMouseCapture(object sender, MouseEventArgs e)
