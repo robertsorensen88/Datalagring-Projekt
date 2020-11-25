@@ -27,7 +27,7 @@ namespace Store
         {
             InitializeComponent();
         }
-        
+
         private void SignUp_Click(Object sender, RoutedEventArgs e)
         {
             var next_window = new CreateUser();
@@ -40,6 +40,12 @@ namespace Store
             {
                 this.Close();
             }
+        }
+        private void Password_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new Password();
+            next_window.Show();
+            this.Close();
         }
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {

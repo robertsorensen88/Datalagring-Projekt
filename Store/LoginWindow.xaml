@@ -11,7 +11,7 @@
 
     </Window.Resources>
     <Grid>
-        <Rectangle Height="450" VerticalAlignment="Top">
+        <Rectangle Height="455" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0 ">
                     <GradientStop Color="Navy"/>
@@ -36,7 +36,7 @@
             </StackPanel>
             <Grid Margin="0,125,0,0" >
                 <StackPanel Orientation="Horizontal" Width="250">
-                    <Button Margin="8,0" Content="Sign up" Click="SignUp_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" BorderBrush="White" Cursor="Hand" Foreground="Blue">
+                    <Button Margin="10,0" Content="Sign up" Click="SignUp_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" BorderBrush="White" Cursor="Hand" Foreground="Blue">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Style.Triggers>
@@ -49,7 +49,7 @@
                             </Style>
                         </Button.Style>
                     </Button>
-                    <Button Margin="40,0" Content="Forgotten your password?" HorizontalAlignment="Right"  VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="White" Foreground="Blue">
+                    <Button Click="Password_Click" Margin="70,0" Content="Forgot password?" HorizontalAlignment="Right"  VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="White" Foreground="Blue">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Style.Triggers>
