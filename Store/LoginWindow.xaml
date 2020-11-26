@@ -6,7 +6,18 @@
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
-
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="AntiqueWhite"/>
+            <Setter Property="BorderBrush" Value="AntiqueWhite"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Foreground" Value="Red"/>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
 
 
     </Window.Resources>
@@ -36,35 +47,11 @@
             </StackPanel>
             <Grid Margin="0,125,0,0" >
                 <StackPanel Orientation="Horizontal" Width="250">
-                    <Button Margin="10,0" Content="Sign up" Click="SignUp_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" BorderBrush="White" Cursor="Hand" Foreground="Blue">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="White"/>
-                                        <Setter Property="BorderBrush" Value="White"/>
-                                        <Setter Property="Foreground" Value="Red"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-                    <Button Click="Password_Click" Margin="70,0" Content="Forgot password?" HorizontalAlignment="Right"  VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="White" Foreground="Blue">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="White"/>
-                                        <Setter Property="BorderBrush" Value="White"/>
-                                        <Setter Property="Foreground" Value="Red"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
+                    <Button Margin="10,0" Content="Sign up" Click="SignUp_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" BorderBrush="White" Cursor="Hand" Foreground="Blue"/>
+                    <Button Click="Password_Click" Margin="70,0" Content="Forgot password?" HorizontalAlignment="Right"  VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="White" Foreground="Blue"/>
                 </StackPanel>
                 <Button Content="Close" Name="CloseButton" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,43,0,0" Click="CloseButton_Click"/>
-                <Button Content="Log In" HorizontalAlignment="Left" Width="90" VerticalAlignment="Top" Margin="20,43,0,0" RenderTransformOrigin="0.248,1.853"/>
+                <Button Content="Log In" HorizontalAlignment="Left" Width="90" VerticalAlignment="Top" Margin="20,43,0,0" RenderTransformOrigin="0.248,1.853" Click="LogIn_Click"/>
             </Grid>
         </Grid>
     </Grid>

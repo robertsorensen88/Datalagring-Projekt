@@ -49,7 +49,7 @@ namespace Store
         }
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
-            
+            // TODO en Forloop som rullar igenom customer listan. matchar lösen och user.
             State.User = API.GetCustomerByName(NameField.Text.Trim());
             if (State.User != null)
             {
