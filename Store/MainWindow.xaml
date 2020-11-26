@@ -5,15 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000">
+        Title="MainWindow" Height="500" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <ScrollViewer>
         <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True">
             <Grid Margin="10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="75" Name="Navbar">
-                <ToggleButton>
-                    <ToggleButton.Background>
-                        <ImageBrush ImageSource="Assets/Buttonslide.png" Stretch="None" AlignmentX='Center'/>
-                    </ToggleButton.Background>
-                </ToggleButton>
+               
             </Grid>
             <Grid Height="500" Width="885" HorizontalAlignment="Right">
                 
