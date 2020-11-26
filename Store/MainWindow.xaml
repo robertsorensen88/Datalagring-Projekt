@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="1000">
     <ScrollViewer>
-        <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True">
+        <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True" Height="476" Width="1000">
             <Grid Margin="10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="75" Name="Navbar">
                 <ToggleButton>
                     <ToggleButton.Background>
@@ -16,7 +16,7 @@
                 </ToggleButton>
             </Grid>
             <Grid Height="500" Width="885" HorizontalAlignment="Right">
-                
+
             </Grid>
         </Grid>
     </ScrollViewer>

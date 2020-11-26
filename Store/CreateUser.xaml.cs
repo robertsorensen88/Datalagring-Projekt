@@ -29,6 +29,7 @@ namespace Store
             next_window.Show();
             this.Close();
         }
+        
        /* private void CreateUser_Click(object sender, RoutedEventArgs e)
         {
             if (NewPasswordbox == CPasswordbox)
