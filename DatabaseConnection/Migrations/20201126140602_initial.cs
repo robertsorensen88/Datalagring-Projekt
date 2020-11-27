@@ -13,11 +13,29 @@ namespace DatabaseConnection.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Customers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Movies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Movies", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -27,7 +45,8 @@ namespace DatabaseConnection.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CustomerId = table.Column<int>(type: "int", nullable: true)
+                    CustomerId = table.Column<int>(type: "int", nullable: true),
+                    MovieId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -38,37 +57,23 @@ namespace DatabaseConnection.Migrations
                         principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Sales_Movies_MovieId",
+                        column: x => x.MovieId,
+                        principalTable: "Movies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.InsertData(
-                table: "Customers",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "William McGuffin" });
-
-            migrationBuilder.InsertData(
-                table: "Customers",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 2, "Paulina Gyver" });
-
-            migrationBuilder.InsertData(
-                table: "Sales",
-                columns: new[] { "Id", "CustomerId", "Date" },
-                values: new object[] { 1, 1, new DateTime(2020, 11, 15, 0, 0, 0, 0, DateTimeKind.Local) });
-
-            migrationBuilder.InsertData(
-                table: "Sales",
-                columns: new[] { "Id", "CustomerId", "Date" },
-                values: new object[] { 3, 1, new DateTime(2020, 11, 15, 0, 0, 0, 0, DateTimeKind.Local) });
-
-            migrationBuilder.InsertData(
-                table: "Sales",
-                columns: new[] { "Id", "CustomerId", "Date" },
-                values: new object[] { 2, 2, new DateTime(2020, 11, 15, 0, 0, 0, 0, DateTimeKind.Local) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Sales_CustomerId",
                 table: "Sales",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sales_MovieId",
+                table: "Sales",
+                column: "MovieId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -78,6 +83,9 @@ namespace DatabaseConnection.Migrations
 
             migrationBuilder.DropTable(
                 name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "Movies");
         }
     }
 }

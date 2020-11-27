@@ -6,14 +6,19 @@
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <ScrollViewer>
-        <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True">
-            <Grid Margin="10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="75" Name="Navbar">
-               
-            </Grid>
-            <Grid Height="500" Width="885" HorizontalAlignment="Right">
-                
-            </Grid>
+    <Grid Width="1000" Height="500">
+        <Grid Width="100" Height="500" HorizontalAlignment="Left" Background="SlateGray">
+            
         </Grid>
-    </ScrollViewer>
+        <ScrollViewer>
+            <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True" HorizontalAlignment="Right">
+                <Grid Margin="10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="75" Name="Navbar">
+               
+                </Grid>
+                <Grid Height="500" Width="885" HorizontalAlignment="Right">
+                
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
 </Window>

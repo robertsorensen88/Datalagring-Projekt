@@ -40,10 +40,10 @@
         <Grid Width="250" Height="200" VerticalAlignment="Bottom" Margin="0,60">
             <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" Foreground="LightSlateGray" FontSize="18"/>
             <StackPanel VerticalAlignment="Center" Margin="10,0,10,0" Height="122">
-                <Label Content="Username" FontSize="9" Margin="0,0"/>
-                <TextBox Name="NameField" Margin="0,1"/>
+                <Label Content="Username"  FontSize="9" Margin="0,0"/>
+                <TextBox Name="NameField" Margin="0,1" PreviewMouseLeftButtonDown="UsernameClickEvent"/>
                 <Label Content="Password" FontSize="9" Margin="0,0"/>
-                <PasswordBox Name="PasswordField" Margin="0,1"/>
+                <PasswordBox Name="PasswordField" Margin="0,1" PreviewMouseLeftButtonDown="PasswordClickEvent"/>
             </StackPanel>
             <Grid Margin="0,125,0,0" >
                 <StackPanel Orientation="Horizontal" Width="250">
