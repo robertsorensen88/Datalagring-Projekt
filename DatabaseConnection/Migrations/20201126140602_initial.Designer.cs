@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseConnection.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201116152806_movies")]
-    partial class movies
+    [Migration("20201126140602_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,24 +28,24 @@ namespace DatabaseConnection.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "William McGuffin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Paulina Gyver"
-                        });
                 });
 
             modelBuilder.Entity("DatabaseConnection.Movie", b =>
@@ -66,7 +66,7 @@ namespace DatabaseConnection.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("DatabaseConnection.Sale", b =>
+            modelBuilder.Entity("DatabaseConnection.Rental", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -89,29 +89,9 @@ namespace DatabaseConnection.Migrations
                     b.HasIndex("MovieId");
 
                     b.ToTable("Sales");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CustomerId = 1,
-                            Date = new DateTime(2020, 11, 16, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CustomerId = 2,
-                            Date = new DateTime(2020, 11, 16, 0, 0, 0, 0, DateTimeKind.Local)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CustomerId = 1,
-                            Date = new DateTime(2020, 11, 16, 0, 0, 0, 0, DateTimeKind.Local)
-                        });
                 });
 
-            modelBuilder.Entity("DatabaseConnection.Sale", b =>
+            modelBuilder.Entity("DatabaseConnection.Rental", b =>
                 {
                     b.HasOne("DatabaseConnection.Customer", "Customer")
                         .WithMany("Sales")

@@ -6,32 +6,46 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseConnection
 {
-    public class API
+    public static class API
     {
-        public static List<Movie> GetMovieSlice(int a, int b)
+        // Här har jag ett kontext tillgängligt för alla API metoder.
+        static Context ctx;
+
+        // Statiska konstruktorer kallas på innan den statiska klassen används.
+        static API()
         {
-            using var ctx = new Context();
-            return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
+            ctx = new Context();
+        }
+
+        public static List<Movie> GetMovieSlice(int skip_x, int take_x)
+        {
+            return ctx.Movies
+                .OrderBy(m => m.Title)
+                .Skip(skip_x)
+                .Take(take_x)
+                .ToList();
         }
         public static Customer GetCustomerByName(string name)
         {
-            using var ctx = new Context();
-            return ctx.Customers.FirstOrDefault(c => c.Name.ToLower() == name.ToLower());
+            return ctx.Customers
+                .FirstOrDefault(c => c.Username.ToLower() == name.ToLower());
+        }
+        public static Customer GetCustomerByPassword(string password)
+        {
+            return ctx.Customers
+                .FirstOrDefault(c => c.Password.ToLower() == password.ToLower());
         }
         public static bool RegisterSale(Customer customer, Movie movie)
         {
-            using var ctx = new Context();
+            // Försök att lägga till ett nytt sales record
             try
             {
-                // Här säger jag åt contextet att inte oroa sig över innehållet i dessa records.
-                // Om jag inte gör detta så kommer den att försöka updatera databasens Id och cracha.
-                ctx.Entry(customer).State = EntityState.Unchanged;
-                ctx.Entry(movie).State = EntityState.Unchanged;
-
                 ctx.Add(new Rental() { Date = DateTime.Now, Customer = customer, Movie = movie });
-                return ctx.SaveChanges() == 1;
+
+                bool one_record_added = ctx.SaveChanges() == 1;
+                return one_record_added;
             }
-            catch(DbUpdateException e)
+            catch (DbUpdateException e)
             {
                 System.Diagnostics.Debug.WriteLine(e.Message);
                 System.Diagnostics.Debug.WriteLine(e.InnerException.Message);

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseConnection.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201116153529_no_seed")]
+    [Migration("20201126142229_no_seed")]
     partial class no_seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,19 @@ namespace DatabaseConnection.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -54,7 +66,7 @@ namespace DatabaseConnection.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("DatabaseConnection.Sale", b =>
+            modelBuilder.Entity("DatabaseConnection.Rental", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -79,7 +91,7 @@ namespace DatabaseConnection.Migrations
                     b.ToTable("Sales");
                 });
 
-            modelBuilder.Entity("DatabaseConnection.Sale", b =>
+            modelBuilder.Entity("DatabaseConnection.Rental", b =>
                 {
                     b.HasOne("DatabaseConnection.Customer", "Customer")
                         .WithMany("Sales")

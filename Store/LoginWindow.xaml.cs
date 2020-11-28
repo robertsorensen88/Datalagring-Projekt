@@ -26,6 +26,8 @@ namespace Store
         public LoginWindow()
         {
             InitializeComponent();
+            NameField.Text = "...";
+            PasswordField.Password = "...";
         }
 
         private void SignUp_Click(Object sender, RoutedEventArgs e)
@@ -49,10 +51,14 @@ namespace Store
         }
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
+            
             // TODO en Forloop som rullar igenom customer listan. matchar lösen och user.
             State.User = API.GetCustomerByName(NameField.Text.Trim());
-            if (State.User != null)
+            State.User = API.GetCustomerByPassword(PasswordField.Password.Trim());
+            if (State.User.Username != null)
             {
+                
+              
                 var next_window = new MainWindow();
                 next_window.Show();
                 this.Close();
@@ -62,7 +68,14 @@ namespace Store
                 NameField.Text = "...";
             }
         }
-
+        private void UsernameClickEvent(object sender, MouseButtonEventArgs e)
+        {
+            NameField.Clear();
+        }
+        private void PasswordClickEvent(object sender, MouseButtonEventArgs e)
+        {
+            PasswordField.Clear();
+        }
         private void Button_GotMouseCapture(object sender, MouseEventArgs e)
         {
 

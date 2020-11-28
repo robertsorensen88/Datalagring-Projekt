@@ -23,12 +23,12 @@ namespace DatabaseConnection.Migrations
                 keyValue: 3);
 
             migrationBuilder.DeleteData(
-                table: "Customers",
+                table: "Sales",
                 keyColumn: "Id",
                 keyValue: 1);
 
             migrationBuilder.DeleteData(
-                table: "Customers",
+                table: "Sales",
                 keyColumn: "Id",
                 keyValue: 2);
         }
@@ -37,13 +37,18 @@ namespace DatabaseConnection.Migrations
         {
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "William McGuffin" });
+                columns: new[] {"Id", "FirstName", "LastName"  , "Email", "Password", "Username"},
+                values: new object[] { 1, "Björn", "Strömberg", "bjorn@email.com", "user1", "Bjarne" });
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 2, "Paulina Gyver" });
+                columns: new[] { "Id", "FirstName", "LastName", "Email", "Password", "Username" },
+                values: new object[] { 2, "Robert", "Sörensen", "robert@email.com", "user2", "Rhabby" });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "FirstName", "LastName", "Email", "Password", "Username" },
+                values: new object[] { 3, "Lujain", "Al-shammari", "lujain@email.com", "user", "Lujain123" });
 
             migrationBuilder.InsertData(
                 table: "Sales",
