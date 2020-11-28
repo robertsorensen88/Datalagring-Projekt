@@ -217,7 +217,6 @@
                     </ToggleButton>
 
                 </Grid>
-
                 <ListView x:Name="LV"
                           Background="Transparent"
                           BorderBrush="Transparent"
@@ -226,56 +225,126 @@
                     <ListViewItem HorizontalAlignment="Left"
                                   Margin="0,0,0,15">
 
-                        <StackPanel Orientation="Horizontal"
-                                    Width="230">
-                            <Image Source="Assets/hiclipart.com.png"
-                                   Stretch="None" Height="52" Width="48"/>
-
-                            <TextBlock Text="Filter"
-                                       Margin="25,0,0,0"
-                                       Style="{StaticResource font_style}"/>
-
-
-                        </StackPanel>
-
                         <ListViewItem.ToolTip>
 
                             <ToolTip x:Name="tt_filter"
                                      Content="Filter"
                                      Style="{StaticResource tt_style}"/>
-                            
+
 
                         </ListViewItem.ToolTip>
+
+
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230" Height="68">
+                            <Image Source="Assets/filter2.png"
+                                   Stretch="None" Height="74" Width="52"/>
+
+                            <TextBlock Text="Filter"
+                                       Margin="23,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+
+
+                        </StackPanel>
 
 
                     </ListViewItem>
 
                     <ListViewItem HorizontalAlignment="Left"
-                                  Margin="0,0,0,15">
-
-                        <StackPanel Orientation="Horizontal"
-                                    Width="230">
-                            <Image Source="Assets/hiclipart.com.png"
-                                   Stretch="None" Height="52" Width="48"/>
-
-                            <TextBlock Text="Filter"
-                                       Margin="25,0,0,0"
-                                       Style="{StaticResource font_style}"/>
-
-
-                        </StackPanel>
+                                  Margin="0,10,0,15">
 
                         <ListViewItem.ToolTip>
 
-                            <ToolTip x:Name="tt_filter"
-                                     Content="Filter"
+                            <ToolTip x:Name="tt_info"
+                                     Content="Info"
                                      Style="{StaticResource tt_style}"/>
 
 
                         </ListViewItem.ToolTip>
 
 
+
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+
+                            <Image Source="Assets/info2.png"
+                                   Stretch="None" Height="56" Width="48"/>
+
+                            <TextBlock Text="Info"
+                                       Margin="25,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+
+
+                        </StackPanel>
+
+
+
                     </ListViewItem>
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,15,0,15">
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_settings"
+                                     Content="Settings"
+                                     Style="{StaticResource tt_style}"/>
+
+
+                        </ListViewItem.ToolTip>
+
+
+
+
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+
+                            <Image Source="Assets/settings.png"
+                                   Stretch="None" Height="58" Width="48"/>
+
+                            <TextBlock Text="Settings"
+                                       Margin="25,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+
+
+                        </StackPanel>
+
+
+
+
+                    </ListViewItem>
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,160,0,15">
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_back"
+                                     Content="Back"
+                                     Style="{StaticResource tt_style}"/>
+
+
+                        </ListViewItem.ToolTip>
+
+
+
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+
+                            <Image Source="Assets/back2.png"
+                                   Stretch="None" Height="56" Width="48"/>
+
+                            <TextBlock Text="Back"
+                                       Margin="25,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+
+
+                        </StackPanel>
+
+
+
+                    </ListViewItem>
+
+
 
 
 
