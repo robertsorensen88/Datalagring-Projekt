@@ -54,6 +54,44 @@
 
         </Style>
 
+        <Style x:Key="Close_btn" TargetType="{x:Type Button}">
+
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="button"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="False">
+
+                                <Setter Property="Background"
+                                        TargetName="button"
+                                        Value="{StaticResource CloseBtn_MouseOver}"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                        
+                    </ControlTemplate>
+                    
+                    
+                </Setter.Value>
+                
+            </Setter>
+            
+            
+        </Style>
+
 
 
         <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
@@ -116,18 +154,70 @@
               Width="850">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#25274D"/>
-                    <GradientStop Color="#FF141529" Offset="1"/>
+                    <GradientStop Color="#2E3047"/>
+                    <GradientStop Color="#FF0D0E1F" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="23*"/>
                 <RowDefinition Height="77*"/>
             </Grid.RowDefinitions>
+            
+            <Grid x:Name="BG" Grid.RowSpan="2" Opacity="0.355" PreviewMouseLeftButtonDown="BG_PreviewMouseLeftButtonDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="46*"/>
+                    <ColumnDefinition Width="379*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.Background>
+
+                    <ImageBrush x:Name="img_bg"
+                                ImageSource="Assets/Lines1.jpg"
+                                Stretch="Fill"/>
+
+                </Grid.Background> 
+                
+            </Grid>
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="30"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="3"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+
+                <Button x:Name="CloseBtn"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Height="40"
+                        Width="40"
+                        BorderThickness="0"
+                        Style="{StaticResource Close_btn}" Click="CloseBtn_Click">
+
+                    <Button.Background>
+
+                        <ImageBrush ImageSource="Assets/Close.png"/>
+
+                    </Button.Background>
+                    
+                </Button>
+                
+            </Grid>
 
             <Grid x:Name="nav_pnl" 
                   HorizontalAlignment="Left" 
-                  Width="65" Background="#464866" Grid.RowSpan="2">
+                  Width="65" Background="#43455C" Grid.RowSpan="2">
 
             </Grid>
 
@@ -137,9 +227,9 @@
 
                     <TextBlock Grid.Row="1"
                                Grid.Column="0"
-                               Margin="73,-20,0,0"
+                               Margin="85,-20,0,0"
                                Text="M E N U"
-                               Foreground="#FFFEEAFF"
+                               Foreground="White"
                                FontSize="22"
                                Background="Transparent"
                                HorizontalAlignment="Left"
@@ -148,10 +238,10 @@
 
                         <TextBlock.Effect>
 
-                            <DropShadowEffect BlurRadius="8"
-                                              ShadowDepth="2"
-                                              Direction="20"
-                                              Color="#FF692DCA"/>
+                            <DropShadowEffect BlurRadius="10"
+                                              ShadowDepth="1"
+                                              Direction="-90"
+                                              Color="White"/>
 
                         </TextBlock.Effect>
 
@@ -164,10 +254,10 @@
                                   Height="70" 
                                   Width="64" 
                                   BorderThickness="0"
-                                  Style="{StaticResource tb_style }">
+                                  Style="{StaticResource tb_style }" Checked="Menu_Button_Checked">
 
                         <ToggleButton.Background>
-                            <ImageBrush ImageSource="Assets/Menu2.png" Stretch="None"/>
+                            <ImageBrush ImageSource="Assets/icons8-moon-phase-60.png" Stretch="None"/>
 
                         </ToggleButton.Background>
 
@@ -220,10 +310,10 @@
                 <ListView x:Name="LV"
                           Background="Transparent"
                           BorderBrush="Transparent"
-                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="507">
 
-                    <ListViewItem HorizontalAlignment="Left"
-                                  Margin="0,0,0,15">
+                    <ListViewItem
+                                  Margin="0,0,0,15" Height="67" MouseEnter="ListViewItem_MouseEnter">
 
                         <ListViewItem.ToolTip>
 
@@ -238,10 +328,10 @@
                         <StackPanel Orientation="Horizontal"
                                     Width="230" Height="68">
                             <Image Source="Assets/filter2.png"
-                                   Stretch="None" Height="74" Width="52"/>
+                                   Stretch="None" Height="54" Width="57"/>
 
                             <TextBlock Text="Filter"
-                                       Margin="23,0,0,0"
+                                       Margin="16,0,0,0"
                                        Style="{StaticResource font_style}"/>
 
 
@@ -251,7 +341,7 @@
                     </ListViewItem>
 
                     <ListViewItem HorizontalAlignment="Left"
-                                  Margin="0,10,0,15">
+                                  Margin="0,10,0,15" MouseEnter="ListViewItem_MouseEnter"> 
 
                         <ListViewItem.ToolTip>
 
@@ -282,7 +372,7 @@
                     </ListViewItem>
 
                     <ListViewItem HorizontalAlignment="Left"
-                                  Margin="0,15,0,15">
+                                  Margin="0,15,0,15" MouseEnter="ListViewItem_MouseEnter">
 
                         <ListViewItem.ToolTip>
 
@@ -303,7 +393,7 @@
                                    Stretch="None" Height="58" Width="48"/>
 
                             <TextBlock Text="Settings"
-                                       Margin="25,0,0,0"
+                                       Margin="23,0,0,0"
                                        Style="{StaticResource font_style}"/>
 
 
@@ -313,8 +403,9 @@
 
 
                     </ListViewItem>
-                    <ListViewItem HorizontalAlignment="Left"
-                                  Margin="0,160,0,15">
+
+                    <ListViewItem
+                                  Margin="0,190,0,15" Height="70" MouseEnter="ListViewItem_MouseEnter">
 
                         <ListViewItem.ToolTip>
 
@@ -328,7 +419,7 @@
 
 
                         <StackPanel Orientation="Horizontal"
-                                    Width="230">
+                                    Width="230" Margin="0,0,0,-17">
 
                             <Image Source="Assets/back2.png"
                                    Stretch="None" Height="56" Width="48"/>
@@ -343,6 +434,60 @@
 
 
                     </ListViewItem>
+
+                    <ListView.ItemContainerStyle>
+
+                        <Style TargetType="ListViewItem">
+
+                            <Setter Property="Template">
+                                <Setter.Value>
+
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+
+                                        <Border x:Name="Bd"
+                                                Height="50"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                Background="{TemplateBinding Background}"
+                                                Padding="{TemplateBinding Padding}"
+                                                SnapsToDevicePixels="True">
+
+                                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                              VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+
+                                            <MultiTrigger>
+
+                                                <MultiTrigger.Conditions>
+
+                                                    <Condition Property="IsMouseOver" Value="true"/>
+
+                                                </MultiTrigger.Conditions>
+
+                                                <Setter Property="Background"
+                                                        TargetName="Bd"
+                                                        Value="#404D5B"/>
+
+                                                <Setter Property="BorderBrush"
+                                                        TargetName="Bd"
+                                                        Value="#404D5B"/>
+
+                                            </MultiTrigger>
+
+                                        </ControlTemplate.Triggers>
+
+
+                                    </ControlTemplate>
+
+                                </Setter.Value>
+
+                            </Setter>
+
+                        </Style>
+                    </ListView.ItemContainerStyle>
 
 
 
