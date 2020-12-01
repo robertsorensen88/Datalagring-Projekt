@@ -27,7 +27,7 @@ namespace DatabaseConnection
         }
         public static Customer GetCustomerByName(string name)
         {
-            return ctx.Customers
+                return ctx.Customers
                 .FirstOrDefault(c => c.Username.ToLower() == name.ToLower());
         }
         public static Customer GetCustomerByPassword(string password)

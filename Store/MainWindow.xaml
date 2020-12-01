@@ -54,7 +54,7 @@
 
         </Style>
 
-        <ImageBrush x:Key="Close_MouseOver" ImageSource="Assets/Close_MouseOver.png"/>
+        <ImageBrush x:Key="CloseBtn_MouseOver" ImageSource="Assets/Close_MouseOver.png"/>
         
         <Style x:Key="Close_btn" TargetType="{x:Type Button}">
 
@@ -78,7 +78,7 @@
 
                                 <Setter Property="Background"
                                         TargetName="button"
-                                        Value="{StaticResource Close_MouseOver}"/>
+                                        Value="{StaticResource CloseBtn_MouseOver}"/>
                             </Trigger>
                             
                         </ControlTemplate.Triggers>
