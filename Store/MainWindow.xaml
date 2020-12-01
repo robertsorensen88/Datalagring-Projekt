@@ -54,8 +54,9 @@
 
         </Style>
 
+        <ImageBrush x:Key="Close_MouseOver" ImageSource="Assets/Close_MouseOver.png"/>
+        
         <Style x:Key="Close_btn" TargetType="{x:Type Button}">
-
 
             <Setter Property="Template">
 
@@ -67,32 +68,28 @@
                                 BorderThickness="0"
                                 Background="{TemplateBinding Background}"
                                 SnapsToDevicePixels="True">
-
+                            
                         </Border>
 
                         <ControlTemplate.Triggers>
 
                             <Trigger Property="IsMouseOver"
-                                     Value="False">
+                                     Value="True">
 
                                 <Setter Property="Background"
                                         TargetName="button"
-                                        Value="{StaticResource CloseBtn_MouseOver}"/>
+                                        Value="{StaticResource Close_MouseOver}"/>
                             </Trigger>
-
+                            
                         </ControlTemplate.Triggers>
                         
                     </ControlTemplate>
-                    
                     
                 </Setter.Value>
                 
             </Setter>
             
-            
         </Style>
-
-
 
         <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
 
