@@ -21,8 +21,15 @@ namespace Store
     /// </summary>
     public partial class MainWindow : Window
     {
+        private void HomeClick(object sender, RoutedEventHandler e)
+        {
+            var next_window = new MainWindow();
+            next_window.Show();
+            this.Close();
+        }
         public MainWindow()
         {
+
             InitializeComponent();
 
             State.Movies = API.GetMovieSlice(0, 30);
@@ -61,7 +68,7 @@ namespace Store
                 }
             }
         }
-
+       
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
             var x = Grid.GetColumn(sender as UIElement);
@@ -76,37 +83,11 @@ namespace Store
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
 
-        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (Menu_Button.IsChecked == true)
-            {
-                tt_filter.Visibility = Visibility.Collapsed;
-                tt_info.Visibility = Visibility.Collapsed;
-                tt_settings.Visibility = Visibility.Collapsed;
-                tt_back.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                tt_filter.Visibility = Visibility.Visible;
-                tt_info.Visibility = Visibility.Visible;
-                tt_settings.Visibility = Visibility.Visible;
-                tt_back.Visibility = Visibility.Visible;
-            }
-        }
+    
 
-        private void Menu_Button_Checked(object sender, RoutedEventArgs e)
-        {
-            img_bg.Opacity = 0.2;
-        }
+   
+      
 
-        private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Menu_Button.IsChecked = false;
-        }
-
-        private void CloseBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
+      
     }
 }

@@ -7,8 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\back2.png" />
+    <None Remove="Assets\Close.png" />
+    <None Remove="Assets\Filter.png" />
+    <None Remove="Assets\filter2.png" />
+    <None Remove="Assets\icons8-moon-phase-60.png" />
+    <None Remove="Assets\info2.png" />
+    <None Remove="Assets\launa.png" />
+    <None Remove="Assets\launa70.png" />
+    <None Remove="Assets\Lines1.jpg" />
     <None Remove="Assets\Login.png" />
     <None Remove="Assets\Lunfilms.png" />
+    <None Remove="Assets\Mouse_over32.png" />
+    <None Remove="Assets\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +47,42 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DatabaseConnection\DatabaseConnection.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\back2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Filter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\filter2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\icons8-moon-phase-60.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\info2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\launa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\launa70.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Lines1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Mouse_over32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
