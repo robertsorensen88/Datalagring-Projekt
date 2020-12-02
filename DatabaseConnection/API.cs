@@ -26,6 +26,10 @@ namespace DatabaseConnection
                 .Take(take_x)
                 .ToList();
         }
+        /*public static List<Movie> GetMovieSliceTop(int skip_x, int take_x)
+        {
+            return ctx.Movies.OrderBy(s=> s.)
+        }*/
         public static Customer GetCustomerByName(string name)
         {
                 return ctx.Customers

@@ -18,6 +18,7 @@ namespace DatabaseConnection.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: true)
+
                 },
                 constraints: table =>
                 {
@@ -31,7 +32,8 @@ namespace DatabaseConnection.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Rating= table.Column<string>(type:"nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

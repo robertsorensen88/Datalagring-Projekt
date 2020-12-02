@@ -61,9 +61,13 @@ namespace DatabaseConnection.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Rating")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
+
                 });
 
             modelBuilder.Entity("DatabaseConnection.Rental", b =>
