@@ -89,7 +89,7 @@ namespace Store
                         catch (Exception e) when (e is ArgumentNullException || e is System.IO.FileNotFoundException || e is UriFormatException)
                         {
                             // Om något gick fel så lägger vi in en placeholder 
-                            image.Source = new BitmapImage(new Uri("https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg"));
+                            image.Source = new BitmapImage(new Uri(@"Assets\image-placeholder.jpg"));
                         }
 
                         // Lägg till Image i Grid
@@ -112,11 +112,18 @@ namespace Store
             int i = y * MovieGrid.ColumnDefinitions.Count + x;
             State.Pick = State.Movies[i];
 
-            if(API.RegisterSale(State.User, State.Pick))
+            if (API.RegisterSale(State.User, State.Pick))
                 MessageBox.Show("All is well and you can download your movie now.", "Sale Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
 
+        private void ToplistClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new MainWindowToplist();
+            next_window.Show();
+            this.Close();
+        
+        }
     }
 }

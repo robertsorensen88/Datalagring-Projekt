@@ -1,15 +1,16 @@
-﻿<Window x:Class="Store.MainWindow"
+<Window x:Class="Store.MainWindowToplist"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindowToplist" Height="450" Width="800">
+    
     <Grid Width="800" Height="450" Background="#43455C">
         <Grid Name="MenuBar" Width="80" Height="450" HorizontalAlignment="Left" Background="#43455C">
             <StackPanel>
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Margin="10,10,10,0" Cursor="Hand">
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Margin="10,10,10,0" Cursor="Hand" Click="HomeClick">
                     <Image Source="Assets/launa.png"/>
                 </ToggleButton>
                 <Label Foreground="#3BBA9C" HorizontalAlignment="Center">LunMovies</Label>
@@ -22,42 +23,37 @@
                         </LinearGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Margin="10,10,10,0" Cursor="Hand" Click="ToplistClick">
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Margin="10,10,10,0" Cursor="Hand">
                     <Image Source="Assets/Star.png"/>
                 </ToggleButton>
-
-
 
 
             </StackPanel>
         </Grid>
         <Image Source="Assets/Lines1.jpg" Width="720" Height="450" Stretch="Fill" HorizontalAlignment="Right"/>
-        <!-- En ScrollViewer för att kunna scrolla igenom alla filmer -->
+
         <ScrollViewer Width="720" HorizontalAlignment="Right">
 
-            <!-- 
-            Grid är användbart när man vill få lite struktur i sin UI.
-            Alla celler måste inte vara lika stora dock som i detta exemplet
-        -->
-        <Grid Name="MovieGrid"  ShowGridLines="True">
+           
+            <Grid Name="MovieGrids"  ShowGridLines="True">
+
                 
-                <!-- Här har jag manuellt bestämt antalet kolumner jag vill ha -->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <!-- Antalet rader fyller jag på inne i 'MainWindow.xaml.cs' -->
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            
-        </Grid>
-    </ScrollViewer>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

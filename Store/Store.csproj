@@ -12,6 +12,7 @@
     <None Remove="Assets\Filter.png" />
     <None Remove="Assets\filter2.png" />
     <None Remove="Assets\icons8-moon-phase-60.png" />
+    <None Remove="Assets\image-placeholder.jpg" />
     <None Remove="Assets\info2.png" />
     <None Remove="Assets\launa.png" />
     <None Remove="Assets\launa70.png" />
@@ -20,6 +21,7 @@
     <None Remove="Assets\Lunfilms.png" />
     <None Remove="Assets\Mouse_over32.png" />
     <None Remove="Assets\settings.png" />
+    <None Remove="Assets\Star.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -65,6 +67,9 @@
     <Resource Include="Assets\icons8-moon-phase-60.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\image-placeholder.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\info2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -81,6 +86,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Star.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
