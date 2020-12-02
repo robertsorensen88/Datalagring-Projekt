@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Sitecore.FakeDb;
 
 namespace DatabaseConnection
 {
@@ -27,7 +28,7 @@ namespace DatabaseConnection
         }
         public static Customer GetCustomerByName(string name)
         {
-            return ctx.Customers
+                return ctx.Customers
                 .FirstOrDefault(c => c.Username.ToLower() == name.ToLower());
                    
         }
@@ -52,6 +53,23 @@ namespace DatabaseConnection
                 System.Diagnostics.Debug.WriteLine(e.InnerException.Message);
                 return false;
             }
+        }
+        public static Rental RentID_and_CustomerName( Customer customer, Rental rental)
+        {
+
+            return ctx.Sales = (from n in Customer
+                                join d in Rental
+                                on customer.Id equals  into j1
+
+                                from r in j1.DefaultIfEmpty()
+
+                                select new
+                                {
+                                    FirstName = d.FirstName,
+                                    MiddleName = d.MiddleName,
+                                    LastName = d.LastName,
+                                    Email = r.EmailAddress1
+                                })
         }
     }
 }

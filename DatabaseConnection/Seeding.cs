@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace DatabaseConnection
 {
@@ -21,7 +22,9 @@ namespace DatabaseConnection
                     new Customer { FirstName = "Robert", LastName = "Sörensen", Email = "robert@email.com", Password = "user2", Username = "Rhabby"  },
                     new Customer { FirstName = "Lujain", LastName = "Al-shammari", Email = "lujain@email.com", Password = "user3", Username = "Lujain123"  },
                 });
-                
+
+
+          
                 // Här laddas data in från SeedData foldern för att fylla ut Movies tabellen
                 var movies = new List<Movie>();
                 var lines = File.ReadAllLines(@"..\..\..\SeedData\MovieGenre.csv");
@@ -40,8 +43,19 @@ namespace DatabaseConnection
                 }
                 ctx.AddRange(movies);
 
+
                 ctx.SaveChanges();
+
+                var customers = ctx.Customers.ToList();
+                foreach (var customer in customers)
+                    Console.WriteLine($"ID:{customer.Id} Name:{customer.FirstName} {customer.LastName} Sales:{customer.Sales}");
+
+                var CustomerList = ctx.Customers.Where(c => c.FirstName == "Lujain").ToList();
+
                 
+               
+                    
+
             }
         }
     }
