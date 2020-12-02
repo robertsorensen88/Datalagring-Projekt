@@ -54,18 +54,25 @@ namespace Store
             
             // TODO en Forloop som rullar igenom customer listan. matchar lösen och user.
             State.User = API.GetCustomerByName(NameField.Text.Trim());
-            State.User = API.GetCustomerByPassword(PasswordField.Password.Trim());
             if (State.User.Username != null)
             {
-                
-              
-                var next_window = new MainWindow();
-                next_window.Show();
-                this.Close();
+                if (State.User.Password == PasswordField.Password)
+                {
+
+                    var next_window = new MainWindow();
+                    next_window.Show();
+                    this.Close();
+                }
+                else
+                {
+                    PasswordField.Password = "...";
+                    MessageBox.Show("Wrong password. Try Again!", "Wrong password", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
             }
             else
             {
                 NameField.Text = "...";
+                MessageBox.Show("Wrong username. Try again!", "Wrong username", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
         private void UsernameClickEvent(object sender, MouseButtonEventArgs e)
