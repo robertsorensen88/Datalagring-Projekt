@@ -22,9 +22,55 @@
                         </LinearGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Margin="10,10,10,0" Cursor="Hand" Click="ToplistClick">
+
+
+                <ToggleButton Background="#43455C" 
+                              BorderBrush="#43455C" 
+                              Width="60" 
+                              Margin="10,10,10,0" 
+                              Cursor="Hand" 
+                              Click="ToplistClick">
                     <Image Source="Assets/Star.png"/>
+                    
                 </ToggleButton>
+
+                <Label Foreground="#3BBA9C" 
+                       HorizontalAlignment="Center">Top Movies
+                </Label>
+                
+                <ToggleButton 
+                    Background="#43455C" 
+                    BorderBrush="#43455C" 
+                    Width="97" 
+                    Cursor="Hand" 
+                    Height="89" 
+                    Margin="-10,10,10,10"
+                    >
+                    <Image Source="Assets/MYaccount.png" Height="54"/>
+                    
+                </ToggleButton>
+                <Label Foreground="#3BBA9C" 
+                       HorizontalAlignment="Center" 
+                       Margin="-30">My Account
+                </Label>
+
+
+                <ToggleButton Background="#43455C" 
+                              BorderBrush="#43455C" 
+                              Width="56" 
+                              Cursor="Hand" 
+                              Height="54" 
+                              Margin="10,40,10,10">
+                    
+                    <Image Source="Assets/Off.png"/>
+                </ToggleButton>
+                
+                <Label Foreground="#3BBA9C"
+                       HorizontalAlignment="Center" 
+                       Margin="-15">Off
+                </Label>
+
+                
 
 
 
@@ -39,25 +85,25 @@
             Grid är användbart när man vill få lite struktur i sin UI.
             Alla celler måste inte vara lika stora dock som i detta exemplet
         -->
-        <Grid Name="MovieGrid"  ShowGridLines="True">
-                
+            <Grid Name="MovieGrid"  ShowGridLines="True">
+
                 <!-- Här har jag manuellt bestämt antalet kolumner jag vill ha -->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <!-- Antalet rader fyller jag på inne i 'MainWindow.xaml.cs' -->
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            
-        </Grid>
-    </ScrollViewer>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <!-- Antalet rader fyller jag på inne i 'MainWindow.xaml.cs' -->
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>
