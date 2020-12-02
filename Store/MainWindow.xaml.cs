@@ -125,5 +125,10 @@ namespace Store
             this.Close();
         
         }
+
+        private void MyAccClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -63,6 +63,9 @@ namespace DatabaseConnection.Migrations
 
                     b.Property<string>("Rating")
                         .HasColumnType("nvarchar(max)");
+                    
+                    b.Property<string>("Genre")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
