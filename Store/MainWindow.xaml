@@ -34,13 +34,7 @@
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10">
                     <Image Source="Assets/Genre.png"/>
                 </ToggleButton>
-
-
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Margin="10,10,10,30" Cursor="Hand" VerticalAlignment="Bottom">
-                    
-                </ToggleButton>
-
-                <ToggleButton x:Name="Close_btn" Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,-10,10,30" Cursor="Hand" VerticalAlignment="Bottom" Click="LogoutClick">
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,30" Cursor="Hand" VerticalAlignment="Bottom" Click="LogoutClick">
                     <Image Source="Assets/Off.png"/>
                     
                 </ToggleButton>

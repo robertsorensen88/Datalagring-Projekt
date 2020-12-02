@@ -130,5 +130,12 @@ namespace Store
         {
 
         }
+
+        private void LogoutClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new LoginWindow();
+            next_window.Show();
+            this.Close();
+        }
     }
 }
