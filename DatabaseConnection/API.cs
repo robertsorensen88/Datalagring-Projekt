@@ -30,11 +30,12 @@ namespace DatabaseConnection
         {
                 return ctx.Customers
                 .FirstOrDefault(c => c.Username.ToLower() == name.ToLower());
+                   
         }
         public static Customer GetCustomerByPassword(string password)
         {
             return ctx.Customers
-                .FirstOrDefault(c => c.Password.ToLower() == password.ToLower());
+                .FirstOrDefault(c => c.Username.ToLower() == password.ToLower());
         }
         public static bool RegisterSale(Customer customer, Movie movie)
         {
