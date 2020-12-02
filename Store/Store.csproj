@@ -20,6 +20,8 @@
     <None Remove="Assets\Login.png" />
     <None Remove="Assets\Lunfilms.png" />
     <None Remove="Assets\Mouse_over32.png" />
+    <None Remove="Assets\MYaccount.png" />
+    <None Remove="Assets\Off.png" />
     <None Remove="Assets\settings.png" />
     <None Remove="Assets\Star.png" />
   </ItemGroup>
@@ -83,6 +85,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Mouse_over32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\MYaccount.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Off.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\settings.png">
