@@ -48,13 +48,7 @@ namespace DatabaseConnection
 
                 var customers = ctx.Customers.ToList();
                 foreach (var customer in customers)
-                    Console.WriteLine($"ID:{customer.Id} Name:{customer.FirstName} {customer.LastName} Sales:{customer.Sales}");
-
-                var CustomerList = ctx.Customers.Where(c => c.FirstName == "Lujain").ToList();
-
-                
-               
-                    
+                    Console.WriteLine($"ID: {customer.Id} Name: {customer.FirstName} {customer.LastName} Password: {customer.Password}");
 
             }
         }
