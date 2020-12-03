@@ -49,9 +49,9 @@
                 <Label Content="Lastname" FontSize="9"/>
                 <TextBox Name="Lastname"/>
                 <Label Content="Username" FontSize="9" Margin="0,0"/>
-                <TextBox Name="UserNameField" Margin="0,0"/>
+                <TextBox Name="Username" Margin="0,0"/>
                 <Label Content="Email" FontSize="9" Margin="0,0"/>
-                <TextBox Name="EmailField" Margin="0,0"/>
+                <TextBox Name="Email" Margin="0,0"/>
                 <Label Content="Password" FontSize="9" Margin="0,0"/>
                 <PasswordBox Name="Passwordbox" Margin="0,0"/>
                 <Label Content="Confirm Password" FontSize="9" Margin="0,0"/>

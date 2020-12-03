@@ -26,6 +26,7 @@ namespace Store
         {
             InitializeComponent();
         }
+
         private void ReturnButtonClick(object sender, RoutedEventArgs e)
         {
             var next_window = new LoginWindow();
@@ -34,7 +35,38 @@ namespace Store
         }
         private void CreateUserClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            using (var ctx = new Context())
+            {
+                
+                    
+                if (Passwordbox.Password == CPasswordbox.Password)
+                {
+
+                    State.User = API.GetCustomerByName(Username.Text);
+                    if (State.User != null)
+                    {
+                        MessageBox.Show("Username already taken.", "Account creation Failed!", MessageBoxButton.OK, MessageBoxImage.Information);
+                        
+                    }
+                    else
+                    {
+                        ctx.Customers.Add(new Customer { FirstName = Firstname.Text, LastName = Lastname.Text, Password = Passwordbox.Password, Email = Email.Text, Username = Username.Text });
+                        ctx.SaveChanges();
+
+                        MessageBox.Show("Account successful creation.", "Account creation Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+                        var next_window = new LoginWindow();
+                        next_window.Show();
+                        this.Close();
+                    }
+                }
+                else
+                {
+                     Passwordbox.Background = Brushes.Red;
+                     CPasswordbox.Background = Brushes.Red;
+                     MessageBox.Show("Password doesn't match.", "Password error.", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+  
+            }
         }
     }
     
