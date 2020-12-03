@@ -134,5 +134,12 @@ namespace Store
             next_window.Show();
             this.Close();
         }
+
+        private void GenreClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new GenreWindow();
+            next_window.Show();
+            this.Close();
+        }
     }
 }

@@ -57,6 +57,79 @@ namespace Store
 
         }
 
-       
+        private void ActionClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AnimationClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AdventureClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BiograhphyClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComedyClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CrimeClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DramaClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DocumentaryClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FantasyClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FamilyClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HorrorClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MusicClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RomanceClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ScifiClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ThrillerClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

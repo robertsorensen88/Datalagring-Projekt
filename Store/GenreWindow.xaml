@@ -37,7 +37,7 @@
                     <Image Source="Assets/MYaccount.png"/>
                 </ToggleButton>
 
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10">
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand">
                     <Image Source="Assets/Genre.png"/>
                 </ToggleButton>
 
@@ -59,21 +59,21 @@
             <Grid Name="MovieGrid" ShowGridLines="True" Width="220" HorizontalAlignment="Right">
                 <StackPanel>
                     <Label Height="50" Foreground="#3BBA9C" HorizontalAlignment="Center" FontSize="30">Choose genre</Label>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Action</Button>
-                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Animation</Button>
-                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Adventure</Button>
-                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Biography</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Comedy</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Crime</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Drama</Button>
-                    <Button Width="85" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Documentary</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Fantasy</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Family</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Horror</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Music</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Romance</Button>
-                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Sci-Fi</Button>
-                    <Button Width="60" Margin="5" Background="Transparent" Foreground="#3BBA9C">- Thriller</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="ActionClick">- Action</Button>
+                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="AnimationClick">- Animation</Button>
+                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="AdventureClick">- Adventure</Button>
+                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="BiograhphyClick">- Biography</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="ComedyClick">- Comedy</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="CrimeClick">- Crime</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="DramaClick">- Drama</Button>
+                    <Button Width="85" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="DocumentaryClick">- Documentary</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="FantasyClick">- Fantasy</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="FamilyClick">- Family</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="HorrorClick">- Horror</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="MusicClick">- Music</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="RomanceClick">- Romance</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="ScifiClick">- Sci-Fi</Button>
+                    <Button Width="60" Margin="5" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C" Cursor="Hand" Click="ThrillerClick">- Thriller</Button>
             </StackPanel>
 
                 
