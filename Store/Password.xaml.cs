@@ -31,17 +31,35 @@ namespace Store
         }
         private void Password_Click(object sender, RoutedEventArgs e)
         {
-            var next_window = new Password();
-            
-            try
+            State.User = API.GetCustomerByName(NameField.Text.Trim());
+            if (State.User.Username != null)
             {
-                next_window.Show();
-                this.Close();
+                if (PasswordField.Password == State.User.Password)
+                {
+                    if (NewPasswordField.Password == CNewPasswordField.Password)
+                    {
+                        State.User.Password = NewPasswordField.Password;
+                        API.ctx.Customers.Update(State.User);
+                        API.ctx.SaveChanges();
+                        MessageBox.Show("Successfully changed password", "Password Changed", MessageBoxButton.OK, MessageBoxImage.Information);
+                        var next_window = new LoginWindow();
+                        next_window.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("New password not matching", "Password Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Existing Password", "Password Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
-            catch
+            else
             {
-                Close();
-                MessageBox.Show("Sure", "Some Title");
+                NameField.Text = "...";
+                MessageBox.Show("Wrong username. Try again!", "Wrong username", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
     }

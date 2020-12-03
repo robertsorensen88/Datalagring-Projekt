@@ -7,16 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseConnection
 {
-    public static class API
+    public class API
     {
-        // Här har jag ett kontext tillgängligt för alla API metoder.
-        static Context ctx;
+        
+        public static Context ctx = new Context();
 
-        // Statiska konstruktorer kallas på innan den statiska klassen används.
-        static API()
-        {
-            ctx = new Context();
-        }
+       
+        
 
         public static List<Movie> GetMovieSlice(int skip_x, int take_x)
         {
