@@ -23,10 +23,22 @@
                         </LinearGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
+                
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Margin="10,10,10,0" Cursor="Hand">
                     <Image Source="Assets/Star.png"/>
                 </ToggleButton>
 
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="GenreClick">
+                    <Image Source="Assets/Genre.png"/>
+                </ToggleButton>
+
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="MyAccClick">
+                    <Image Source="Assets/MYaccount.png"/>
+                </ToggleButton>
+
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,30" Cursor="Hand" VerticalAlignment="Bottom" Click="LogoutClick">
+                    <Image Source="Assets/Off.png"/>
+                </ToggleButton>
 
             </StackPanel>
         </Grid>
