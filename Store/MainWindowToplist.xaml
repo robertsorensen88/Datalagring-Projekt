@@ -8,12 +8,17 @@
         Title="MainWindowToplist" Height="450" Width="800">
     
     <Grid Width="800" Height="450" Background="#43455C">
+        
         <Grid Name="MenuBar" Width="80" Height="450" HorizontalAlignment="Left" Background="#43455C">
+            
             <StackPanel>
+                
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Margin="10,10,10,0" Cursor="Hand" Click="HomeClick">
                     <Image Source="Assets/launa.png"/>
                 </ToggleButton>
-                <Label Foreground="#3BBA9C" HorizontalAlignment="Center">LunMovies</Label>
+
+                <Label Foreground="#3BBA9C" HorizontalAlignment="Center">TopList</Label>
+                
                 <Rectangle Height="10" Stroke="Black" Width="80">
                     <Rectangle.Fill>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0 ">
