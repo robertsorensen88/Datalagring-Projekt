@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="GenreWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid Width="800" Height="450" Background="#43455C">
+        Title="GenreWindow" Height="450" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Width="300" Height="450" Background="#43455C">
         <Grid Name="MenuBar" Width="80" Height="450" HorizontalAlignment="Left" Background="#43455C">
 
             <StackPanel Height="450">
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,0" Cursor="Hand" Click="HomeClick">
+                    
                     <Image Source="Assets/launa.png"/>
+                    
                 </ToggleButton>
 
                 <Label Foreground="#3BBA9C" HorizontalAlignment="Center" FontSize="10">Genres</Label>
@@ -46,30 +48,37 @@
             </StackPanel>
 
         </Grid>
-        <Image Source="Assets/Lines1.jpg" Width="720" Height="450" Stretch="Fill" HorizontalAlignment="Right"/>
+        <Grid Name="Category" HorizontalAlignment="Right" Width="80" Margin="0,0,16,0">
+            
+        </Grid>
+        <Image Source="Assets/Lines1.jpg" Width="220" Height="450" Stretch="Fill" HorizontalAlignment="Right"/>
 
-        <ScrollViewer Width="720" HorizontalAlignment="Right">
+       
 
 
-            <Grid ShowGridLines="True">
+            <Grid Name="MovieGrid" ShowGridLines="True" Width="220" HorizontalAlignment="Right">
+                <StackPanel>
+                    <Label Height="50" Foreground="#3BBA9C" HorizontalAlignment="Center" FontSize="30">Choose genre</Label>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Action</Button>
+                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Animation</Button>
+                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Adventure</Button>
+                    <Button Width="70" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Biography</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Comedy</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Crime</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Drama</Button>
+                    <Button Width="85" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Documentary</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Fantasy</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Family</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Horror</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Music</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Romance</Button>
+                    <Button Width="60" Margin="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3BBA9C">- Sci-Fi</Button>
+                    <Button Width="60" Margin="5" Background="Transparent" Foreground="#3BBA9C">- Thriller</Button>
+            </StackPanel>
 
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+                
 
             </Grid>
-        </ScrollViewer>
+        
     </Grid>
 </Window>
