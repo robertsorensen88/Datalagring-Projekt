@@ -21,12 +21,7 @@ namespace Store
     /// </summary>
     public partial class MainWindow : Window
     {
-        private void HomeClick(object sender, RoutedEventHandler e)
-        {
-            var next_window = new MainWindow();
-            next_window.Show();
-            this.Close();
-        }
+        
         public MainWindow()
         {
 
@@ -128,7 +123,9 @@ namespace Store
 
         private void MyAccClick(object sender, RoutedEventArgs e)
         {
-
+            var next_window = new MyAccountWindow();
+            next_window.Show();
+            this.Close();
         }
 
         private void LogoutClick(object sender, RoutedEventArgs e)

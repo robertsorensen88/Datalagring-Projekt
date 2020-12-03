@@ -11,6 +11,7 @@
     <None Remove="Assets\Close.png" />
     <None Remove="Assets\Filter.png" />
     <None Remove="Assets\filter2.png" />
+    <None Remove="Assets\Genre.png" />
     <None Remove="Assets\icons8-moon-phase-60.png" />
     <None Remove="Assets\image-placeholder.jpg" />
     <None Remove="Assets\info2.png" />
@@ -64,6 +65,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\filter2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Genre.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\icons8-moon-phase-60.png">

@@ -19,7 +19,7 @@ namespace Store
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MyAccountWindow : Window
+    public partial class GenreWindow : Window
     {
         private void HomeClick(object sender, RoutedEventArgs e)
         {
@@ -41,14 +41,20 @@ namespace Store
             next_window.Show();
             this.Close();
         }
-        public MyAccountWindow()
+        private void MyAccClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new MyAccountWindow();
+            next_window.Show();
+            this.Close();
+        }
+        public GenreWindow()
         {
 
-           InitializeComponent();
+            InitializeComponent();
 
 
 
-            
+
         }
 
         
