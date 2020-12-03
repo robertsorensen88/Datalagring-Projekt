@@ -30,7 +30,7 @@ namespace Store
 
             int movie_skip_count = 0;
             int movie_take_count = 30;
-            State.Movies = API.GetMovieSlice(movie_skip_count, movie_take_count);
+            State.Movies = API.GetMovieSliceTop(movie_skip_count, movie_take_count);
 
             int column_count = MovieGrid.ColumnDefinitions.Count;
 

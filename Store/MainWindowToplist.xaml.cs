@@ -29,14 +29,14 @@ namespace Store
             int movie_take_count = 30;
             State.Movies = API.GetMovieSlice(movie_skip_count, movie_take_count);
 
-            int column_count = MenuBar.ColumnDefinitions.Count;
+            int column_count = MovieGrids.ColumnDefinitions.Count;
 
             int row_count = (int)Math.Ceiling((double)State.Movies.Count / (double)column_count);
 
             for (int y = 0; y < row_count; y++)
             {
                 // Skapa en rad-definition för att bestämma hur hög just denna raden är.
-                MenuBar.RowDefinitions.Add(
+                MovieGrids.RowDefinitions.Add(
                     new RowDefinition()
                     {
                         Height = new GridLength(140, GridUnitType.Pixel)
@@ -87,9 +87,44 @@ namespace Store
             }
         }
 
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            var x = Grid.GetColumn(sender as UIElement);
+            var y = Grid.GetRow(sender as UIElement);
+
+            int i = y * MovieGrids.ColumnDefinitions.Count + x;
+            State.Pick = State.Movies[i];
+
+            if (API.RegisterSale(State.User, State.Pick))
+                MessageBox.Show("All is well and you can download your movie now.", "Sale Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        }
+
         private void HomeClick(object sender, RoutedEventArgs e)
         {
             var next_window = new MainWindow();
+            next_window.Show();
+            this.Close();
+        }
+
+        private void MyAccClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new MyAccountWindow();
+            next_window.Show();
+            this.Close();
+        }
+
+        private void GenreClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new GenreWindow();
+            next_window.Show();
+            this.Close();
+        }
+
+        private void LogoutClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new LoginWindow();
             next_window.Show();
             this.Close();
         }
