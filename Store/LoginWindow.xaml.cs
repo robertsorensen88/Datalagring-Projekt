@@ -68,12 +68,14 @@ namespace Store
                     PasswordField.Password = "...";
                     MessageBox.Show("Wrong password. Try Again!", "Wrong password", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 }
+
             }
             else
             {
                 NameField.Text = "...";
                 MessageBox.Show("Wrong username. Try again!", "Wrong username", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
+            
         }
         private void UsernameClickEvent(object sender, MouseButtonEventArgs e)
         {
