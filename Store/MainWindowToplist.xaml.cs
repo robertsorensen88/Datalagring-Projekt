@@ -63,7 +63,8 @@ namespace Store
                             VerticalAlignment = VerticalAlignment.Center,
                             Margin = new Thickness(4, 4, 4, 4),
                         };
-                        
+
+                        image.MouseUp += Image_MouseUp;
 
                         try
                         {
@@ -76,7 +77,7 @@ namespace Store
                         }
 
                         // Lägg till Image i Grid
-                        MenuBar.Children.Add(image);
+                        MovieGrids.Children.Add(image);
 
                         // Placera in Image i Grid
                         Grid.SetRow(image, y);
