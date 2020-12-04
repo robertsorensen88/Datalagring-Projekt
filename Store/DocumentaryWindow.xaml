@@ -1,11 +1,11 @@
-<Window x:Class="Store.ComedyWindow"
+<Window x:Class="Store.DocumentaryWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="ComedyWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="DocumentaryWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid Width="800" Height="450" Background="#43455C">
         <Grid Name="MenuBar" Width="80" Height="450" HorizontalAlignment="Left" Background="#43455C">
 
