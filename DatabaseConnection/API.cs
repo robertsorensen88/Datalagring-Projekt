@@ -31,6 +31,22 @@ namespace DatabaseConnection
                 .Take(take_x)
                 .ToList();
         }
+        
+        public static List<Rental> GetRentalSlice(int user)
+        {
+            return ctx.Sales
+                .OrderBy(s => s.Date.Date)
+                .Where(c => c.Customer.Id == user)
+                .ToList();
+        }
+        public static List<Movie> GetMoviebyCategory (string genre)
+        {
+            return ctx.Movies
+                .OrderByDescending(m => m.Title)
+                .Where(g => g.Genre == genre)
+                .ToList();
+        }
+
         public static Customer GetCustomerByName(string name)
         {
                 return ctx.Customers

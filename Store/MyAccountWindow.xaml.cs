@@ -44,13 +44,29 @@ namespace Store
         public MyAccountWindow()
         {
 
-           InitializeComponent();
+            InitializeComponent();
 
+            UserLabel.Content = State.User.Username;
+            int GetId = State.User.Id;
 
+            State.User.Sales = API.GetRentalSlice(GetId);
 
-            
+            for (int i = 0; i < State.User.Sales.Count; i++)
+            {
+
+                var rental = State.User.Sales[i];
+
+                var RentalTitle = new Label() { };
+                RentalTitle.Content = rental.Movie.Title;
+                RentalTitle.HorizontalAlignment = HorizontalAlignment.Left;
+                RentalTitle.VerticalAlignment = VerticalAlignment.Top;
+                RentalTitle.Foreground = UserLabel.Foreground;
+
+                RentList.Children.Add(RentalTitle);
+
+            }
+
         }
-
-        
-    }
+              
+    }  
 }
