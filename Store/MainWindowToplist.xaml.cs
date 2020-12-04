@@ -27,16 +27,16 @@ namespace Store
             InitializeComponent();
             int movie_skip_count = 0;
             int movie_take_count = 30;
-            State.Movies = API.GetMovieSlice(movie_skip_count, movie_take_count);
+            State.Movies = API.GetMovieSliceTop(movie_skip_count, movie_take_count);
 
-            int column_count = MovieGrids.ColumnDefinitions.Count;
+            int column_count = MovieGrid.ColumnDefinitions.Count;
 
             int row_count = (int)Math.Ceiling((double)State.Movies.Count / (double)column_count);
 
             for (int y = 0; y < row_count; y++)
             {
                 // Skapa en rad-definition för att bestämma hur hög just denna raden är.
-                MovieGrids.RowDefinitions.Add(
+                MovieGrid.RowDefinitions.Add(
                     new RowDefinition()
                     {
                         Height = new GridLength(140, GridUnitType.Pixel)
@@ -56,34 +56,68 @@ namespace Store
                         // Försök att skapa en Image Controller(legobit) och
                         // placera den i rätt Grid cell enl. x,y koordinaterna
                         // Skapa en Image som visar filmomslaget
-                        var image = new Image()
-                        {
-                            Cursor = Cursors.Hand, // Visa en 'click me' hand när man hovrar över bilden
-                            HorizontalAlignment = HorizontalAlignment.Center,
-                            VerticalAlignment = VerticalAlignment.Center,
-                            Margin = new Thickness(4, 4, 4, 4),
-                        };
-
-                        image.MouseUp += Image_MouseUp;
-
                         try
                         {
-                            image.Source = new BitmapImage(new Uri(movie.ImageURL)); // Hämta hem bildlänken till RAM
+                            var title = new Label() { }; // variabel för texten
+                            title.Content = movie.Title; // Vad texten ska innehålla, i detta fall Movie.Title i databasen
+                            title.HorizontalAlignment = HorizontalAlignment.Center; // vart texten ska ligga horisontelt
+                            title.VerticalAlignment = VerticalAlignment.Top; // vart texten ska ligga vertikalt
+                            title.FontSize = 10;
+                            title.Foreground = HeadLabel.Foreground;
+                            title.Margin = new Thickness(2, 20, 2, 2);
+
+                            var image = new Image() { };
+                            image.Cursor = Cursors.Hand; // om man håller över en bild blir det ett sånt pekfinger
+                            image.MouseUp += Image_MouseUp; // Om man klickar på en bilden skickas man ner till Image_MouseUp Metoden.
+                            image.HorizontalAlignment = HorizontalAlignment.Center;
+                            image.VerticalAlignment = VerticalAlignment.Center;
+                            image.Source = new BitmapImage(new Uri(movie.ImageURL)); // hämtar url från ImageURL i databasen till bilderna
+                            image.Height = 60;
+                            image.Width = 60;
+                            image.Stretch = Stretch.Fill;
+                            
+
+                            var rating = new Label() { };
+                            rating.Content = movie.Rating + "/10 ";
+                            rating.HorizontalAlignment = HorizontalAlignment.Center;
+                            rating.VerticalAlignment = VerticalAlignment.Bottom;
+                            rating.Foreground = HeadLabel.Foreground;
+                            rating.FontSize = 10;
+                            rating.Margin = new Thickness(2, 2, 2, 18);
+
+                            var genre = new Label() { };
+                            genre.Content = movie.Genre;
+                            genre.HorizontalAlignment = HorizontalAlignment.Center;
+                            genre.VerticalAlignment = VerticalAlignment.Bottom;
+                            genre.Foreground = HeadLabel.Foreground;
+                            genre.FontSize = 10;
+                            genre.Margin = new Thickness(2, 2, 2, 7);
+
+                            
+
+                            MovieGrid.Children.Add(title); // säger till att texten ska tillhöra den gridden
+                            Grid.SetRow(title, y); // vilken grid i y
+                            Grid.SetColumn(title, x); // vilken grid i x
+                            MovieGrid.Children.Add(image);
+                            Grid.SetRow(image, y);
+                            Grid.SetColumn(image, x);
+                            MovieGrid.Children.Add(rating);
+                            Grid.SetRow(rating, y);
+                            Grid.SetColumn(rating, x);
+                            MovieGrid.Children.Add(genre);
+                            Grid.SetRow(genre, y);
+                            Grid.SetColumn(genre, x);
                         }
-                        catch (Exception e) when (e is ArgumentNullException || e is System.IO.FileNotFoundException || e is UriFormatException)
+                        catch (Exception exeption) when
+                            (exeption is ArgumentNullException ||
+                             exeption is System.IO.FileNotFoundException ||
+                             exeption is UriFormatException)
                         {
-                            // Om något gick fel så lägger vi in en placeholder 
-                            image.Source = new BitmapImage(new Uri(@"Assets\image-placeholder.jpg"));
+                            continue;
                         }
-
-                        // Lägg till Image i Grid
-                        MovieGrids.Children.Add(image);
-
-                        // Placera in Image i Grid
-                        Grid.SetRow(image, y);
-                        Grid.SetColumn(image, x);
                     }
                 }
+                
 
             }
         }
@@ -93,7 +127,7 @@ namespace Store
             var x = Grid.GetColumn(sender as UIElement);
             var y = Grid.GetRow(sender as UIElement);
 
-            int i = y * MovieGrids.ColumnDefinitions.Count + x;
+            int i = y * MovieGrid.ColumnDefinitions.Count + x;
             State.Pick = State.Movies[i];
 
             if (API.RegisterSale(State.User, State.Pick))

@@ -26,12 +26,12 @@ namespace DatabaseConnection
         public static List<Movie> GetMovieSliceTop(int skip_x, int take_x)
         {
             return ctx.Movies
-                .OrderBy(r => r.Rating)
+                .OrderByDescending(m => m.Rating)
                 .Skip(skip_x)
                 .Take(take_x)
                 .ToList();
         }
-        
+
         public static List<Rental> GetRentalSlice(int user)
         {
             return ctx.Sales
