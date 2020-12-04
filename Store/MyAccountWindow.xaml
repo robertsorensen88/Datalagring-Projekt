@@ -35,7 +35,7 @@
                     <Image Source="Assets/MYaccount.png"/>
                 </ToggleButton>
 
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10">
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Click="GenreClick">
                     <Image Source="Assets/Genre.png"/>
                 </ToggleButton>
 
