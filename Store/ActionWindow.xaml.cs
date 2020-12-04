@@ -16,19 +16,17 @@ using DatabaseConnection;
 
 namespace Store
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class ActionWindow : Window
     {
 
         public ActionWindow()
         {
             InitializeComponent();
-            int movie_skip_count = 0;
-            int movie_take_count = 30;
-            State.Movies = API.GetMovieSliceTop(movie_skip_count, movie_take_count);
-
+            string cat = "Action";
+            
+            State.Movies = API.GetMoviebyCategory(cat);
+    
             int column_count = MovieGrid.ColumnDefinitions.Count;
 
             int row_count = (int)Math.Ceiling((double)State.Movies.Count / (double)column_count);
@@ -48,10 +46,11 @@ namespace Store
                     // Räkna ut vilken film vi ska ploppa in härnäst utifrån mina x,y koordinater
                     int i = y * column_count + x;
                     // Kolla så att vi inte försöker fylla mer Grid celler än vi har filmrecords.
-                    if (i < State.Movies.Count)
+                    if (i < 30)
                     {
                         // Hämta ett film record
                         var movie = State.Movies[i];
+                      
 
                         // Försök att skapa en Image Controller(legobit) och
                         // placera den i rätt Grid cell enl. x,y koordinaterna
@@ -160,6 +159,13 @@ namespace Store
         private void LogoutClick(object sender, RoutedEventArgs e)
         {
             var next_window = new LoginWindow();
+            next_window.Show();
+            this.Close();
+        }
+
+        private void ToplistClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new MainWindowToplist();
             next_window.Show();
             this.Close();
         }

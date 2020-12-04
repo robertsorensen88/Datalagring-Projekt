@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 
 
+
 namespace DatabaseConnection
 {
     public class API
@@ -25,6 +26,7 @@ namespace DatabaseConnection
         }
         public static List<Movie> GetMovieSliceTop(int skip_x, int take_x)
         {
+            
             return ctx.Movies
                 .OrderByDescending(m => m.Rating)
                 .Skip(skip_x)
@@ -41,9 +43,10 @@ namespace DatabaseConnection
         }
         public static List<Movie> GetMoviebyCategory (string genre)
         {
+
             return ctx.Movies
-                .OrderByDescending(m => m.Title)
-                .Where(g => g.Genre == genre)
+                .AsEnumerable()
+                .Where(m => m.Genre.Contains(genre, StringComparison.OrdinalIgnoreCase))
                 .ToList();
         }
 

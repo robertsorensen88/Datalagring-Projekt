@@ -15,7 +15,7 @@
                     <Image Source="Assets/launa.png"/>
                 </ToggleButton>
 
-                <Label Name="HeadLabel" Foreground="#3BBA9C" HorizontalAlignment="Center">LunMovies</Label>
+                <Label Name="HeadLabel" Foreground="#3BBA9C" HorizontalAlignment="Center">Action</Label>
 
                 <Rectangle Height="10" Stroke="Black" Width="80">
                     <Rectangle.Fill>
@@ -51,34 +51,31 @@
 
 
 
-        <!-- En ScrollViewer för att kunna scrolla igenom alla filmer -->
+      
 
         <ScrollViewer Width="720" HorizontalAlignment="Right">
 
-            <!-- 
-            Grid är användbart när man vill få lite struktur i sin UI.
-            Alla celler måste inte vara lika stora dock som i detta exemplet
-        -->
+            
             <Grid Name="MovieGrid"  ShowGridLines="False" >
 
-                <!-- Här har jag manuellt bestämt antalet kolumner jag vill ha -->
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <!-- Antalet rader fyller jag på inne i 'MainWindow.xaml.cs' -->
+               
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="120"/>
-                    <RowDefinition Height="120" />
-                    <RowDefinition Height="120" />
-                    <RowDefinition Height="120" />
-                    <RowDefinition Height="120" />
-                    <RowDefinition Height="120" />
-                    <RowDefinition Height="120" />
-                    <RowDefinition Height="120" />
-                    <RowDefinition Height="120" />
-                    <RowDefinition Height="120" />
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
 
                 </Grid.RowDefinitions>
 

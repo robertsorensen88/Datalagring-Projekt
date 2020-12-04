@@ -59,7 +59,9 @@ namespace Store
 
         private void ActionClick(object sender, RoutedEventArgs e)
         {
-
+            var next_window = new ActionWindow();
+            next_window.Show();
+            this.Close();
         }
 
         private void AnimationClick(object sender, RoutedEventArgs e)
