@@ -1,4 +1,4 @@
-Ôªøusing System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,118 +16,111 @@ using DatabaseConnection;
 
 namespace Store
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+
+    public partial class RomanceWindow : Window
     {
-        
-        public MainWindow()
+
+        public RomanceWindow()
         {
-
             InitializeComponent();
+            string cat = "Romance";
 
-
-            int movie_skip_count = 0;
-            int movie_take_count = 30;
-            State.Movies = API.GetMovieSlice(movie_skip_count, movie_take_count);
+            State.Movies = API.GetMoviebyCategory(cat);
 
             int column_count = MovieGrid.ColumnDefinitions.Count;
 
-            /*
-             * cols = 3, movs = 10
-             * 
-             * rows = movs/cols = 3.333
-             * 
-             * vi beh√∂ver allts√• 4 rader. Vi kan inte bara g√∂ra en vanlig heltalsdivision.
-             * 
-             * rows = ceiling(movs/cols) = 4
-             */
             int row_count = (int)Math.Ceiling((double)State.Movies.Count / (double)column_count);
 
             for (int y = 0; y < row_count; y++)
             {
-                // Skapa en rad-definition f√∂r att best√§mma hur h√∂g just denna raden √§r.
+                // Skapa en rad-definition fˆr att best‰mma hur hˆg just denna raden ‰r.
                 MovieGrid.RowDefinitions.Add(
                     new RowDefinition()
                     {
                         Height = new GridLength(140, GridUnitType.Pixel)
                     });
 
-                // L√§gga till en film i varje cell f√∂r en rad
+                // L‰gga till en film i varje cell fˆr en rad
                 for (int x = 0; x < column_count; x++)
                 {
-                    // R√§kna ut vilken film vi ska ploppa in h√§rn√§st utifr√•n mina x,y koordinater
+                    // R‰kna ut vilken film vi ska ploppa in h‰rn‰st utifrÂn mina x,y koordinater
                     int i = y * column_count + x;
-                    // Kolla s√• att vi inte f√∂rs√∂ker fylla mer Grid celler √§n vi har filmrecords.
-                    if (i < State.Movies.Count)
+                    // Kolla sÂ att vi inte fˆrsˆker fylla mer Grid celler ‰n vi har filmrecords.
+                    if (i < 30)
                     {
-                        // H√§mta ett film record
+                        // H‰mta ett film record
                         var movie = State.Movies[i];
 
-                        // F√∂rs√∂k att skapa en Image Controller(legobit) och
-                        // placera den i r√§tt Grid cell enl. x,y koordinaterna
+
+                        // Fˆrsˆk att skapa en Image Controller(legobit) och
+                        // placera den i r‰tt Grid cell enl. x,y koordinaterna
                         // Skapa en Image som visar filmomslaget
                         try
                         {
-                            
-
-                            var title = new Label() { };
-                            title.Content = movie.Title;
-                            title.HorizontalAlignment = HorizontalAlignment.Center;
-                            title.VerticalAlignment = VerticalAlignment.Top;
-                            title.Foreground = name.Foreground;
-                            title.FontSize = 12;
-                            title.Margin = new Thickness(2, 2, 2, 2);
+                            var title = new Label() { }; // variabel fˆr texten
+                            title.Content = movie.Title; // Vad texten ska innehÂlla, i detta fall Movie.Title i databasen
+                            title.HorizontalAlignment = HorizontalAlignment.Center; // vart texten ska ligga horisontelt
+                            title.VerticalAlignment = VerticalAlignment.Top; // vart texten ska ligga vertikalt
+                            title.FontSize = 10;
+                            title.Foreground = HeadLabel.Foreground;
+                            title.Margin = new Thickness(2, 20, 2, 2);
 
                             var image = new Image() { };
-                            image.Cursor = Cursors.Hand; // Visa en 'click me' hand n√§r man hovrar √∂ver bilden
+                            image.Cursor = Cursors.Hand; // om man hÂller ˆver en bild blir det ett sÂnt pekfinger
+                            image.MouseUp += Image_MouseUp; // Om man klickar pÂ en bilden skickas man ner till Image_MouseUp Metoden.
                             image.HorizontalAlignment = HorizontalAlignment.Center;
                             image.VerticalAlignment = VerticalAlignment.Center;
-                            image.Margin = new Thickness(2, 2, 2, 2);
-                            image.Width = 60;
+                            image.Source = new BitmapImage(new Uri(movie.ImageURL)); // h‰mtar url frÂn ImageURL i databasen till bilderna
                             image.Height = 60;
+                            image.Width = 60;
                             image.Stretch = Stretch.Fill;
-                            image.Source = new BitmapImage(new Uri(movie.ImageURL));
+
+
+                            var rating = new Label() { };
+                            rating.Content = movie.Rating + "/10 ";
+                            rating.HorizontalAlignment = HorizontalAlignment.Center;
+                            rating.VerticalAlignment = VerticalAlignment.Bottom;
+                            rating.Foreground = HeadLabel.Foreground;
+                            rating.FontSize = 10;
+                            rating.Margin = new Thickness(2, 2, 2, 18);
 
                             var genre = new Label() { };
                             genre.Content = movie.Genre;
                             genre.HorizontalAlignment = HorizontalAlignment.Center;
                             genre.VerticalAlignment = VerticalAlignment.Bottom;
-                            genre.Foreground = name.Foreground;
-                            genre.FontSize = 12;
-                            genre.Margin = new Thickness(2, 2, 2, 2);
+                            genre.Foreground = HeadLabel.Foreground;
+                            genre.FontSize = 10;
+                            genre.Margin = new Thickness(2, 2, 2, 7);
 
 
-                            image.MouseUp += Image_MouseUp;
 
-                            // Placera in Image i Grid
-                            MovieGrid.Children.Add(title); // s√§ger till att texten ska tillh√∂ra den gridden
+                            MovieGrid.Children.Add(title); // s‰ger till att texten ska tillhˆra den gridden
                             Grid.SetRow(title, y); // vilken grid i y
                             Grid.SetColumn(title, x); // vilken grid i x
                             MovieGrid.Children.Add(image);
                             Grid.SetRow(image, y);
                             Grid.SetColumn(image, x);
+                            MovieGrid.Children.Add(rating);
+                            Grid.SetRow(rating, y);
+                            Grid.SetColumn(rating, x);
                             MovieGrid.Children.Add(genre);
                             Grid.SetRow(genre, y);
                             Grid.SetColumn(genre, x);
                         }
-
-                        // H√§mta hem bildl√§nken till RAM
-
-                        catch (Exception e) when (e is ArgumentNullException || e is System.IO.FileNotFoundException || e is UriFormatException) 
+                        catch (Exception exeption) when
+                            (exeption is ArgumentNullException ||
+                             exeption is System.IO.FileNotFoundException ||
+                             exeption is UriFormatException)
                         {
                             continue;
                         }
-                        
                     }
-                        // L√§gg till Image i Grid
-                        
                 }
+
 
             }
         }
-       
+
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
             var x = Grid.GetColumn(sender as UIElement);
@@ -142,17 +135,23 @@ namespace Store
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
 
-        private void ToplistClick(object sender, RoutedEventArgs e)
+        private void HomeClick(object sender, RoutedEventArgs e)
         {
-            var next_window = new MainWindowToplist();
+            var next_window = new MainWindow();
             next_window.Show();
             this.Close();
-        
         }
 
         private void MyAccClick(object sender, RoutedEventArgs e)
         {
             var next_window = new MyAccountWindow();
+            next_window.Show();
+            this.Close();
+        }
+
+        private void GenreClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new GenreWindow();
             next_window.Show();
             this.Close();
         }
@@ -164,9 +163,9 @@ namespace Store
             this.Close();
         }
 
-        private void GenreClick(object sender, RoutedEventArgs e)
+        private void ToplistClick(object sender, RoutedEventArgs e)
         {
-            var next_window = new GenreWindow();
+            var next_window = new MainWindowToplist();
             next_window.Show();
             this.Close();
         }

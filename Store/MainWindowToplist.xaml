@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="MainWindowToplist" Height="450" Width="800">
+        Title="MainWindowToplist" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     
     <Grid Width="800" Height="450" Background="#43455C">
         
@@ -17,7 +17,7 @@
                     <Image Source="Assets/launa.png"/>
                 </ToggleButton>
 
-                <Label Foreground="#3BBA9C" HorizontalAlignment="Center">TopList</Label>
+                <Label Foreground="#3BBA9C" HorizontalAlignment="Center" Name="HeadLabel">TopList</Label>
                 
                 <Rectangle Height="10" Stroke="Black" Width="80">
                     <Rectangle.Fill>
@@ -47,30 +47,37 @@
 
             </StackPanel>
         </Grid>
-        <Image Source="Assets/Lines1.jpg" Width="720" Height="450" Stretch="Fill" HorizontalAlignment="Right"/>
-
-        <ScrollViewer Width="720" HorizontalAlignment="Right">
-
-           
-            <Grid Name="MovieGrids"  ShowGridLines="True">
-
+        <Grid Width="720" Height="450" HorizontalAlignment="Right">
+            <Image Source="Assets/Lines1.jpg" Stretch="Fill"/>
+            
+            <ScrollViewer Width="720" HorizontalAlignment="Right">
                 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
 
-            </Grid>
-        </ScrollViewer>
+                <Grid Name="MovieGrid" ShowGridLines="False">
+
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                      
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="150" />
+                    </Grid.RowDefinitions>
+
+                </Grid>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>

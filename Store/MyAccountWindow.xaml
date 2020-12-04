@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="MyAccountWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid Width="800" Height="450" Background="#43455C">
+        Title="MyAccountWindow" Height="450" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Width="400" Height="450" Background="#43455C">
         <Grid Name="MenuBar" Width="80" Height="450" HorizontalAlignment="Left" Background="#43455C">
 
             <StackPanel Height="450">
@@ -35,7 +35,7 @@
                     <Image Source="Assets/MYaccount.png"/>
                 </ToggleButton>
 
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10">
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Click="GenreClick">
                     <Image Source="Assets/Genre.png"/>
                 </ToggleButton>
 
@@ -46,30 +46,18 @@
             </StackPanel>
 
         </Grid>
-        <Image Source="Assets/Lines1.jpg" Width="720" Height="450" Stretch="Fill" HorizontalAlignment="Right"/>
-       
-        <ScrollViewer Width="720" HorizontalAlignment="Right">
+        
+        <Image Source="Assets/Lines1.jpg" Width="320" Height="450" Stretch="Fill" HorizontalAlignment="Right"/>
+        <Grid Width="320" Height="450" HorizontalAlignment="Right">
+            <ScrollViewer Width="320" HorizontalAlignment="Right">
+                <StackPanel Name ="RentList">
+                    <Label Name="UserLabel" FontSize="30" Content="" Foreground="#3BBA9C" HorizontalAlignment="Center" />
+                    <Label FontSize="15" Foreground="#3BBA9C" HorizontalAlignment="Center" Content="My Movies" />
+                    
 
-           
-            <Grid ShowGridLines="True">
-
-               
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-            </Grid>
-        </ScrollViewer>
+                </StackPanel>
+            </ScrollViewer>
+            
+        </Grid>
     </Grid>
 </Window>

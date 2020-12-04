@@ -13,10 +13,7 @@ using DatabaseConnection;
 
 namespace Store
 {
-    /// <summary>
-    /// Interaction logic for LoginWindow.xaml
-    /// </summary>
-    /// TODO Password and username have 2 match 2 login 
+ 
     public partial class LoginWindow : Window
     {
         private void CloseButton_Click(object sender, RoutedEventArgs e)

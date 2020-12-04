@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 
 
+
 namespace DatabaseConnection
 {
     public class API
@@ -25,12 +26,30 @@ namespace DatabaseConnection
         }
         public static List<Movie> GetMovieSliceTop(int skip_x, int take_x)
         {
+            
             return ctx.Movies
-                .OrderBy(r => r.Rating)
+                .OrderByDescending(m => m.Rating)
                 .Skip(skip_x)
                 .Take(take_x)
                 .ToList();
         }
+
+        public static List<Rental> GetRentalSlice(int user)
+        {
+            return ctx.Sales
+                .OrderBy(s => s.Date.Date)
+                .Where(c => c.Customer.Id == user)
+                .ToList();
+        }
+        public static List<Movie> GetMoviebyCategory (string genre)
+        {
+
+            return ctx.Movies
+                .AsEnumerable()
+                .Where(m => m.Genre.Contains(genre, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
         public static Customer GetCustomerByName(string name)
         {
                 return ctx.Customers
