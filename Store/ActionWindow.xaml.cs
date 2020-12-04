@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,6 +67,7 @@ namespace Store
                             title.Margin = new Thickness(2, 20, 2, 2);
 
                             var image = new Image() { };
+                            
                             image.Cursor = Cursors.Hand; // om man håller över en bild blir det ett sånt pekfinger
                             image.MouseUp += Image_MouseUp; // Om man klickar på en bilden skickas man ner till Image_MouseUp Metoden.
                             image.HorizontalAlignment = HorizontalAlignment.Center;
@@ -74,6 +76,8 @@ namespace Store
                             image.Height = 60;
                             image.Width = 60;
                             image.Stretch = Stretch.Fill;
+
+                           
 
 
                             var rating = new Label() { };
@@ -135,6 +139,7 @@ namespace Store
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
 
+
         private void HomeClick(object sender, RoutedEventArgs e)
         {
             var next_window = new MainWindow();
@@ -169,5 +174,8 @@ namespace Store
             next_window.Show();
             this.Close();
         }
+
+        
+             
     }
 }

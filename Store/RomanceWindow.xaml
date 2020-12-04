@@ -11,11 +11,11 @@
 
             <StackPanel Height="450">
 
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,0" Cursor="Hand">
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,0" Cursor="Hand" ToolTip="Back to menu">
                     <Image Source="Assets/launa.png"/>
                 </ToggleButton>
 
-                <Label Name="HeadLabel" Foreground="#3BBA9C" HorizontalAlignment="Center">Action</Label>
+                <Label Name="HeadLabel" Foreground="#3BBA9C" HorizontalAlignment="Center">Romance</Label>
 
                 <Rectangle Height="10" Stroke="Black" Width="80">
                     <Rectangle.Fill>
@@ -28,19 +28,19 @@
                 </Rectangle>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="ToplistClick">
-                    <Image Source="Assets/Star.png"/>
+                    <Image Source="Assets/Star.png" ToolTip="show top lits movies"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="MyAccClick">
-                    <Image Source="Assets/MYaccount.png"/>
+                    <Image Source="Assets/MYaccount.png" ToolTip="Your rentals"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="GenreClick">
-                    <Image Source="Assets/Genre.png"/>
+                    <Image Source="Assets/Genre.png" ToolTip="Show movies after genre"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,30" Cursor="Hand" VerticalAlignment="Bottom" Click="LogoutClick">
-                    <Image Source="Assets/Off.png"/>
+                    <Image Source="Assets/Off.png" ToolTip="Logout"/>
                 </ToggleButton>
 
             </StackPanel>

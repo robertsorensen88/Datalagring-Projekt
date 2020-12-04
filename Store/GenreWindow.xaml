@@ -13,7 +13,7 @@
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,0" Cursor="Hand" Click="HomeClick">
                     
-                    <Image Source="Assets/launa.png"/>
+                    <Image Source="Assets/launa.png" ToolTip="Back to menu"/>
                     
                 </ToggleButton>
 
@@ -30,19 +30,19 @@
                 </Rectangle>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="ToplistClick">
-                    <Image Source="Assets/Star.png"/>
+                    <Image Source="Assets/Star.png" ToolTip="Show top list movies"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="MyAccClick">
-                    <Image Source="Assets/MYaccount.png"/>
+                    <Image Source="Assets/MYaccount.png" ToolTip="Your rentals"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand">
-                    <Image Source="Assets/Genre.png"/>
+                    <Image Source="Assets/Genre.png" ToolTip="Show movies efter genre"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,30" Cursor="Hand" VerticalAlignment="Bottom" Click="LogoutClick">
-                    <Image Source="Assets/Off.png"/>
+                    <Image Source="Assets/Off.png" ToolTip="Logout"/>
                 </ToggleButton>
 
             </StackPanel>

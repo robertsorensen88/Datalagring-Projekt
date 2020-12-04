@@ -28,7 +28,7 @@
                 </Rectangle>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="ToplistClick">
-                    <Image Source="Assets/Star.png"/>
+                    <Image Source="Assets/Star.png" ToolTip="Shows top list movies"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="MyAccClick">
