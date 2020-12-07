@@ -35,7 +35,7 @@
                     <Image Source="Assets/MYaccount.png" ToolTip="My account"/>
                 </ToggleButton>
 
-                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Click="GenreClick">
+                <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="GenreClick">
                     <Image Source="Assets/Genre.png" ToolTip="Genres"/>
                 </ToggleButton>
 
