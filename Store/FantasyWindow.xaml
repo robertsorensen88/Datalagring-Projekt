@@ -12,7 +12,7 @@
             <StackPanel Height="450">
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,0" Cursor="Hand">
-                    <Image Source="Assets/launa.png" ToolTip="Back to menu"/>
+                    <Image Source="Assets/launa.png" ToolTip="Home"/>
                 </ToggleButton>
 
                 <Label Name="HeadLabel" Foreground="#3BBA9C" HorizontalAlignment="Center">Fantasy</Label>
@@ -28,15 +28,15 @@
                 </Rectangle>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="ToplistClick">
-                    <Image Source="Assets/Star.png" ToolTip="Show top list movies"/>
+                    <Image Source="Assets/Star.png" ToolTip="Top list"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="MyAccClick">
-                    <Image Source="Assets/MYaccount.png" ToolTip="Your rentals"/>
+                    <Image Source="Assets/MYaccount.png" ToolTip="My account"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,10" Cursor="Hand" Click="GenreClick">
-                    <Image Source="Assets/Genre.png" ToolTip="Show movies after genre"/>
+                    <Image Source="Assets/Genre.png" ToolTip="Genres"/>
                 </ToggleButton>
 
                 <ToggleButton Background="#43455C" BorderBrush="#43455C" Width="60" Height="60" Margin="10,10,10,30" Cursor="Hand" VerticalAlignment="Bottom" Click="LogoutClick">
